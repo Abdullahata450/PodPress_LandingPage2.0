@@ -3053,6 +3053,87 @@
       background: rgba(255, 90, 31, 0.3);
     }
 
+    [data-theme="dark"] .transcript-mockup {
+      background: rgba(22, 26, 34, 0.85);
+      border-color: var(--border);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .transcript-mockup-bar {
+      background: rgba(13, 16, 23, 0.9);
+    }
+
+    [data-theme="dark"] .newsletter-preview-panel {
+      background: rgba(13, 16, 23, 0.5);
+    }
+
+    [data-theme="dark"] .newsletter-preview-block {
+      background: rgba(22, 26, 34, 0.7);
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .transcript-feature-icon,
+    [data-theme="dark"] .branding-feature-icon {
+      background: rgba(22, 26, 34, 0.8);
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .branding-email {
+      background: rgba(22, 26, 34, 0.85);
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .branding-email-label {
+      background: rgba(13, 16, 23, 0.6);
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .campaign-mockup {
+      background: rgba(13, 16, 23, 0.5);
+      border-color: var(--border);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .campaign-composer {
+      background: rgba(22, 26, 34, 0.85);
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .campaign-field-value {
+      background: rgba(13, 16, 23, 0.6);
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .youtube-mockup {
+      background: rgba(22, 26, 34, 0.85);
+      border-color: var(--border);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .youtube-input-area {
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .youtube-input-field {
+      background: rgba(13, 16, 23, 0.6);
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .youtube-block {
+      background: rgba(13, 16, 23, 0.5);
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .repurpose-card {
+      background: rgba(22, 26, 34, 0.7);
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .repurpose-badge {
+      background: rgba(22, 26, 34, 0.8);
+      border-color: var(--border);
+    }
+
     .mobile-menu {
       position: fixed;
       inset: 0;
@@ -3435,6 +3516,841 @@
         }
       }
     }
+
+    /* ========== TRANSCRIPT STUDIO ========== */
+    .transcript-studio {
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .transcript-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .transcript-features {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .transcript-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .transcript-feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+      color: var(--cornflower);
+    }
+
+    .transcript-feature-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .transcript-feature h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+
+    .transcript-feature p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .transcript-mockup {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(17, 17, 17, 0.08);
+    }
+
+    .transcript-mockup-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border-light);
+      background: var(--bg);
+    }
+
+    .transcript-mockup-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 320px;
+    }
+
+    .transcript-panel {
+      padding: 20px;
+      border-right: 1px solid var(--border-light);
+    }
+
+    .transcript-panel-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cornflower);
+      margin-bottom: 14px;
+    }
+
+    .transcript-line {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .transcript-ts {
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--ampersand);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+      padding-top: 1px;
+    }
+
+    .transcript-text {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .transcript-text.highlight {
+      background: rgba(58, 103, 255, 0.08);
+      border-radius: 3px;
+      padding: 0 3px;
+    }
+
+    .transcript-speaker {
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .transcript-speaker-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .transcript-speaker-dot.s1 {
+      background: var(--cornflower);
+    }
+
+    .transcript-speaker-dot.s2 {
+      background: var(--ampersand);
+    }
+
+    .newsletter-preview-panel {
+      padding: 20px;
+      background: var(--bg);
+    }
+
+    .newsletter-preview-panel .transcript-panel-label {
+      color: var(--ampersand);
+    }
+
+    .newsletter-preview-block {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin-bottom: 10px;
+    }
+
+    .newsletter-preview-block h5 {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .newsletter-preview-line {
+      height: 5px;
+      border-radius: 3px;
+      background: var(--border);
+      margin-bottom: 5px;
+    }
+
+    .newsletter-preview-source {
+      font-size: 0.58rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .newsletter-preview-source svg {
+      width: 10px;
+      height: 10px;
+      stroke: var(--cornflower);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ========== REPURPOSE TEMPLATES ========== */
+    .repurpose-section {
+      background: var(--surface);
+    }
+
+    .repurpose-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .repurpose-header .section-desc {
+      margin: 0 auto;
+    }
+
+    .template-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .repurpose-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .repurpose-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(17, 17, 17, 0.06);
+      border-color: transparent;
+    }
+
+    .repurpose-card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+
+    .repurpose-card-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .repurpose-card-icon.icon-blog {
+      background: linear-gradient(135deg, var(--cornflower), #6B8FFF);
+    }
+
+    .repurpose-card-icon.icon-seo {
+      background: linear-gradient(135deg, var(--ampersand), #FF8A5C);
+    }
+
+    .repurpose-card-icon.icon-insights {
+      background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+    }
+
+    .repurpose-card-icon.icon-faq {
+      background: linear-gradient(135deg, #059669, #34D399);
+    }
+
+    .repurpose-card-icon.icon-snippets {
+      background: linear-gradient(135deg, #EC4899, #F472B6);
+    }
+
+    .repurpose-card-icon.icon-reflection {
+      background: linear-gradient(135deg, #F59E0B, #FBBF24);
+    }
+
+    .repurpose-card-icon.icon-discussion {
+      background: linear-gradient(135deg, #06B6D4, #22D3EE);
+    }
+
+    .repurpose-card-icon.icon-custom {
+      background: linear-gradient(135deg, var(--slate), #5A6170);
+    }
+
+    .repurpose-card h4 {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .repurpose-card p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .repurpose-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    .repurpose-badge .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cornflower);
+    }
+
+    .repurpose-gallery-label {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    /* ========== EMAIL BRANDING ========== */
+    .email-branding {
+      background: var(--bg);
+    }
+
+    .branding-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .branding-features {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .branding-feature {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .branding-feature-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .branding-feature-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--ampersand);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .branding-feature h4 {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+
+    .branding-feature p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .branding-preview {
+      position: relative;
+    }
+
+    .branding-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .branding-email {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .branding-email:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(17, 17, 17, 0.06);
+    }
+
+    .branding-email-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 10px 14px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-muted);
+    }
+
+    .branding-email-body {
+      padding: 16px 14px;
+    }
+
+    .branding-email-header {
+      margin-bottom: 12px;
+    }
+
+    .branding-email-title {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .branding-email-sender {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+    }
+
+    .branding-email-lines .newsletter-preview-line {
+      margin-bottom: 4px;
+    }
+
+    .branding-email.branded .branding-email-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .branding-logo-placeholder {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: var(--ampersand);
+      flex-shrink: 0;
+    }
+
+    .branding-email.branded {
+      border-color: var(--ampersand);
+    }
+
+    .branding-email.branded .branding-email-title {
+      color: var(--ampersand);
+    }
+
+    .branding-email.branded .newsletter-preview-line:nth-child(odd) {
+      background: rgba(255, 90, 31, 0.12);
+    }
+
+    /* ========== BULK EMAIL CAMPAIGNS ========== */
+    .bulk-campaigns {
+      background: var(--surface);
+    }
+
+    .campaign-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .campaign-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .campaign-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .campaign-step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--cornflower);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .campaign-step h4 {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+
+    .campaign-step p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .campaign-mockup {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 24px 80px rgba(17, 17, 17, 0.06);
+    }
+
+    .campaign-composer {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .campaign-field {
+      margin-bottom: 14px;
+    }
+
+    .campaign-field-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .campaign-field-value {
+      font-size: 0.78rem;
+      color: var(--ink);
+      padding: 8px 12px;
+      background: var(--bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+    }
+
+    .campaign-recipients {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: rgba(58, 103, 255, 0.04);
+      border: 1px solid rgba(58, 103, 255, 0.12);
+      border-radius: var(--radius-sm);
+    }
+
+    .campaign-recipients-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--cornflower);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .campaign-recipients-icon svg {
+      width: 12px;
+      height: 12px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .campaign-recipients-text {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--cornflower);
+    }
+
+    .campaign-send-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
+      background: var(--ampersand);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-top: 16px;
+      border: none;
+    }
+
+    .campaign-send-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .campaign-progress {
+      margin-top: 16px;
+      padding: 12px;
+      background: rgba(5, 150, 105, 0.04);
+      border: 1px solid rgba(5, 150, 105, 0.12);
+      border-radius: var(--radius-sm);
+    }
+
+    .campaign-progress-bar {
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .campaign-progress-fill {
+      height: 100%;
+      width: 68%;
+      background: linear-gradient(90deg, #059669, #34D399);
+      border-radius: 3px;
+    }
+
+    .campaign-progress-text {
+      font-size: 0.68rem;
+      color: #059669;
+      font-weight: 600;
+    }
+
+    /* ========== YOUTUBE INPUT ========== */
+    .youtube-section {
+      background: var(--bg);
+    }
+
+    .youtube-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .youtube-mockup {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(17, 17, 17, 0.08);
+    }
+
+    .youtube-input-area {
+      padding: 20px;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .youtube-input-field {
+      flex: 1;
+      padding: 10px 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+    }
+
+    .youtube-input-btn {
+      padding: 8px 16px;
+      background: #FF0000;
+      color: #fff;
+      border-radius: var(--radius-sm);
+      font-size: 0.72rem;
+      font-weight: 600;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .youtube-output {
+      padding: 20px;
+    }
+
+    .youtube-block {
+      padding: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .youtube-block:hover {
+      border-color: var(--cornflower);
+      transform: translateX(4px);
+    }
+
+    .youtube-block-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .youtube-ts-badge {
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #fff;
+      background: #FF0000;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .youtube-block-title {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .youtube-block-desc {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .youtube-features {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .youtube-feature-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: #FF0000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .youtube-feature-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .youtube-feature h4 {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+
+    .youtube-feature p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ========== RESPONSIVE FOR NEW SECTIONS ========== */
+    @media (max-width: 1024px) {
+      .transcript-layout,
+      .branding-layout,
+      .campaign-layout,
+      .youtube-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .template-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .transcript-mockup-body {
+        grid-template-columns: 1fr;
+      }
+
+      .transcript-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .branding-comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .template-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .template-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -3461,8 +4377,10 @@
       </a>
       <ul class="nav-links">
         <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#transcript">Transcript</a></li>
+        <li><a href="#templates">Templates</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#campaigns">Campaigns</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -3487,8 +4405,10 @@
     <nav aria-label="Mobile">
       <ul class="mobile-menu-links">
         <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#transcript">Transcript</a></li>
+        <li><a href="#templates">Templates</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#campaigns">Campaigns</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -3511,12 +4431,10 @@
     <div class="container">
       <div class="hero-badge">
         <span class="dot"></span>
-        AI-Powered Podcast Automation
+        Podcast-to-Newsletter Operating System
       </div>
-      <h1>AI-Powered Podcast to <em>Newsletter Automation</em></h1>
-      <p>Turn episodes into ready-to-send newsletters in minutes — no editing, no rewriting. Generate formatted email
-        content from podcast RSS, audio, or YouTube links. Save hours every week while driving subscriber growth and
-        engagement.</p>
+      <h1>From episode to transcript to <em>branded campaign</em></h1>
+      <p>Turn every episode into transcript-backed, branded content and send it to your audience — from one workspace. Upload audio, paste a YouTube link, or connect your RSS. Generate newsletters in multiple formats and deliver campaigns directly.</p>
       <div class="hero-actions">
         <a href="https://app.podpress.so/signup" target="_blank" rel="noopener noreferrer"
           class="btn btn-primary btn-large">Start Free Trial &rarr;</a>
@@ -3531,12 +4449,17 @@
           </div>
           <div class="mockup-content" style="position:relative;">
             <div class="mockup-left">
-              <div class="mockup-label">Podcast Episode</div>
+              <div class="mockup-label">Input Sources</div>
               <div class="mockup-episode">
-                <div class="mockup-episode-title">Ep. 47 &mdash; The Future of Creator Tools</div>
-                <div class="mockup-episode-meta">Published Mar 12 &bull; 42 min</div>
+                <div class="mockup-episode-title">Ep. 47 — The Future of Creator Tools</div>
+                <div class="mockup-episode-meta">YouTube · 42 min · Auto-transcribed</div>
                 <div class="mockup-waveform" id="waveform"></div>
               </div>
+              <div class="mockup-episode" style="opacity:0.5;">
+                <div class="mockup-episode-title">Ep. 46 — Building in Public</div>
+                <div class="mockup-episode-meta">RSS Feed · 38 min · Processing...</div>
+              </div>
+            </div>
               <div class="mockup-episode" style="opacity:0.5;">
                 <div class="mockup-episode-title">Ep. 46 &mdash; Building in Public</div>
                 <div class="mockup-episode-meta">Published Mar 5 &bull; 38 min</div>
@@ -3544,20 +4467,20 @@
             </div>
             <div class="mockup-arrow">&rarr;</div>
             <div class="mockup-right">
-              <div class="mockup-label">Generated Newsletter</div>
+              <div class="mockup-label">Branded Newsletter + Campaign</div>
               <div class="mockup-newsletter">
                 <div class="mockup-newsletter-header">The Future of Creator Tools</div>
                 <div class="mockup-newsletter-line" style="width:100%"></div>
                 <div class="mockup-newsletter-line" style="width:90%"></div>
                 <div class="mockup-newsletter-line" style="width:95%"></div>
                 <div class="mockup-newsletter-line" style="width:75%"></div>
-                <div class="mockup-newsletter-line" style="width:85%"></div>
                 <div style="margin-top:14px;display:flex;gap:6px;">
                   <span
-                    style="padding:3px 10px;background:rgba(255,90,31,0.08);border-radius:99px;font-size:0.65rem;color:var(--ampersand);font-weight:600;">Key
-                    Takeaways</span>
+                    style="padding:3px 10px;background:rgba(255,90,31,0.08);border-radius:99px;font-size:0.65rem;color:var(--ampersand);font-weight:600;">Transcript</span>
                   <span
-                    style="padding:3px 10px;background:rgba(58,103,255,0.08);border-radius:99px;font-size:0.65rem;color:var(--cornflower);font-weight:600;">Timestamps</span>
+                    style="padding:3px 10px;background:rgba(58,103,255,0.08);border-radius:99px;font-size:0.65rem;color:var(--cornflower);font-weight:600;">7+ Templates</span>
+                  <span
+                    style="padding:3px 10px;background:rgba(5,150,105,0.08);border-radius:99px;font-size:0.65rem;color:#059669;font-weight:600;">Campaign</span>
                 </div>
               </div>
             </div>
@@ -3602,8 +4525,8 @@
               <div class="why-stat-label">Average Draft Time</div>
             </div>
             <div class="why-stat">
-              <div class="why-stat-value" data-count="10" data-suffix="+">0+</div>
-              <div class="why-stat-label">Formats available</div>
+              <div class="why-stat-value" data-count="4" data-suffix="">0</div>
+              <div class="why-stat-label">Newsletter types</div>
             </div>
           </div>
           <div class="why-stats reveal">
@@ -3669,13 +4592,409 @@
   </section>
 
 
+   <!-- ===== TRANSCRIPT STUDIO ===== -->
+  <section class="transcript-studio" id="transcript">
+    <div class="container">
+      <div class="section-label reveal">Transcript Studio</div>
+      <h2 class="section-title reveal">Every great newsletter starts with a <em>trustworthy transcript.</em></h2>
+      <p class="section-desc reveal">Review, edit, and export your episode transcript before generating final content.</p>
+
+      <div class="transcript-layout">
+        <div class="transcript-features">
+          <div class="transcript-feature reveal">
+            <div class="transcript-feature-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>Structured transcript timeline</h4>
+              <p>Each segment includes speaker context and timestamps for easy review.</p>
+            </div>
+          </div>
+          <div class="transcript-feature reveal reveal-delay-1">
+            <div class="transcript-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Speaker and segment editing</h4>
+              <p>Rename speakers and edit transcript segments inline so your source stays accurate.</p>
+            </div>
+          </div>
+          <div class="transcript-feature reveal reveal-delay-2">
+            <div class="transcript-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </div>
+            <div>
+              <h4>Transcript export</h4>
+              <p>Export transcripts as TXT or SRT for downstream workflows.</p>
+            </div>
+          </div>
+          <div class="transcript-feature reveal reveal-delay-3">
+            <div class="transcript-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div>
+              <h4>Transcript-first workflow</h4>
+              <p>Your transcript remains the primary source for newsletter and content generation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="transcript-mockup reveal">
+          <div class="transcript-mockup-bar">
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+            <div class="mockup-dot"></div>
+            <span style="font-size:0.65rem;color:var(--text-muted);margin-left:8px;">PodPress — Episode 47</span>
+          </div>
+          <div class="transcript-mockup-body">
+            <div class="transcript-panel">
+              <div class="transcript-panel-label">Transcript</div>
+              <div class="transcript-speaker"><span class="transcript-speaker-dot s1"></span> Host</div>
+              <div class="transcript-line"><span class="transcript-ts">0:42</span><span class="transcript-text">Welcome to another episode of <span class="highlight">Creator Camp</span>.</span></div>
+              <div class="transcript-line"><span class="transcript-ts">1:08</span><span class="transcript-text">Today we're talking about the future of tools for creators.</span></div>
+              <div class="transcript-speaker"><span class="transcript-speaker-dot s2"></span> Guest</div>
+              <div class="transcript-line"><span class="transcript-ts">1:24</span><span class="transcript-text">I think the biggest shift is <span class="highlight">automation without losing voice</span>.</span></div>
+              <div class="transcript-line"><span class="transcript-ts">1:47</span><span class="transcript-text">People want speed, but they don't want to sound robotic.</span></div>
+              <div class="transcript-line"><span class="transcript-ts">2:10</span><span class="transcript-text">The key is giving creators <span class="highlight">control over tone and structure</span>.</span></div>
+            </div>
+            <div class="newsletter-preview-panel">
+              <div class="transcript-panel-label">Generated Newsletter</div>
+              <div class="newsletter-preview-block">
+                <h5>Key Takeaways</h5>
+                <div class="newsletter-preview-line" style="width:100%"></div>
+                <div class="newsletter-preview-line" style="width:85%"></div>
+                <div class="newsletter-preview-line" style="width:92%"></div>
+                <div class="newsletter-preview-source">
+                  <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/></svg>
+                  Sourced from transcript · 0:42–2:10
+                </div>
+              </div>
+              <div class="newsletter-preview-block">
+                <h5>Quotes</h5>
+                <div class="newsletter-preview-line" style="width:78%"></div>
+                <div class="newsletter-preview-line" style="width:65%"></div>
+                <div class="newsletter-preview-source">
+                  <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/></svg>
+                  Sourced from transcript · 1:24
+                </div>
+              </div>
+              <div class="newsletter-preview-block">
+                <h5>Timestamps</h5>
+                <div class="newsletter-preview-line" style="width:55%"></div>
+                <div class="newsletter-preview-line" style="width:70%"></div>
+                <div class="newsletter-preview-line" style="width:62%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REPURPOSE TEMPLATES ===== -->
+  <section class="repurpose-section" id="templates">
+    <div class="container">
+      <div class="repurpose-header">
+        <div class="section-label reveal">Content Repurposing</div>
+        <h2 class="section-title reveal">One episode, <em>multiple reusable content outputs.</em></h2>
+        <p class="section-desc reveal">Generate core newsletter formats — Brief, Detailed, Summary, and Highlights. Use custom templates and prompts to create additional assets like FAQs, key insights, SEO ideas, and discussion-focused content — all from a single workspace.</p>
+      </div>
+
+      <div class="template-gallery">
+        <div class="repurpose-card reveal">
+          <div class="repurpose-card-icon icon-blog">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h4>Brief</h4>
+          <p>Concise episode summary for quick reader consumption.</p>
+        </div>
+        <div class="repurpose-card reveal reveal-delay-1">
+          <div class="repurpose-card-icon icon-seo">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h4>Detailed</h4>
+          <p>In-depth newsletter with expanded analysis and context.</p>
+        </div>
+        <div class="repurpose-card reveal reveal-delay-2">
+          <div class="repurpose-card-icon icon-insights">
+            <svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg>
+          </div>
+          <h4>Summary</h4>
+          <p>Balanced overview capturing the episode's core message.</p>
+        </div>
+        <div class="repurpose-card reveal reveal-delay-3">
+          <div class="repurpose-card-icon icon-faq">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h4>Highlights</h4>
+          <p>Key moments and standout quotes from the episode.</p>
+        </div>
+        <div class="repurpose-card reveal">
+          <div class="repurpose-card-icon icon-snippets">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+          </div>
+          <h4>FAQ</h4>
+          <p>Auto-generated questions and answers from episode discussion via custom prompt.</p>
+        </div>
+        <div class="repurpose-card reveal reveal-delay-1">
+          <div class="repurpose-card-icon icon-reflection">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h4>Key Insights</h4>
+          <p>Actionable bullet points and takeaways from custom prompts.</p>
+        </div>
+        <div class="repurpose-card reveal reveal-delay-2">
+          <div class="repurpose-card-icon icon-discussion">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h4>Discussion Questions</h4>
+          <p>Prompt your community with questions drawn from episode topics.</p>
+        </div>
+        <div class="repurpose-card reveal reveal-delay-3">
+          <div class="repurpose-card-icon icon-custom">
+            <svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          </div>
+          <h4>Custom Prompts</h4>
+          <p>Create your own templates and prompts for any output format you need.</p>
+        </div>
+      </div>
+
+      <div class="repurpose-gallery-label reveal">
+        <div class="repurpose-badge">
+          <span class="badge-dot"></span>
+          Reuse one processed episode across multiple writing formats
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EMAIL BRANDING ===== -->
+  <section class="email-branding" id="branding">
+    <div class="container">
+      <div class="section-label reveal">Email Branding</div>
+      <h2 class="section-title reveal">Your brand in <em>every send.</em></h2>
+      <p class="section-desc reveal">Upload your logo, configure brand colors, and preview templates before sending.</p>
+
+      <div class="branding-layout">
+        <div class="branding-preview">
+          <div class="branding-comparison">
+            <div class="branding-email reveal">
+              <div class="branding-email-label">Default</div>
+              <div class="branding-email-body">
+                <div class="branding-email-header">
+                  <div class="branding-email-title">Podcast Newsletter</div>
+                </div>
+                <div class="branding-email-sender">from PodPress</div>
+                <div class="branding-email-lines" style="margin-top:12px;">
+                  <div class="newsletter-preview-line" style="width:100%"></div>
+                  <div class="newsletter-preview-line" style="width:88%"></div>
+                  <div class="newsletter-preview-line" style="width:95%"></div>
+                  <div class="newsletter-preview-line" style="width:72%"></div>
+                  <div class="newsletter-preview-line" style="width:80%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="branding-email branded reveal reveal-delay-1">
+              <div class="branding-email-label">Branded</div>
+              <div class="branding-email-body">
+                <div class="branding-email-header">
+                  <div class="branding-logo-placeholder"></div>
+                  <div>
+                    <div class="branding-email-title">Creator Camp Weekly</div>
+                  </div>
+                </div>
+                <div class="branding-email-sender">Brand name · Custom colors applied</div>
+                <div class="branding-email-lines" style="margin-top:12px;">
+                  <div class="newsletter-preview-line" style="width:100%"></div>
+                  <div class="newsletter-preview-line" style="width:88%"></div>
+                  <div class="newsletter-preview-line" style="width:95%"></div>
+                  <div class="newsletter-preview-line" style="width:72%"></div>
+                  <div class="newsletter-preview-line" style="width:80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="branding-features">
+          <div class="branding-feature reveal">
+            <div class="branding-feature-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <div>
+              <h4>Logo upload</h4>
+              <p>Upload your logo or provide a logo URL to include in every branded email.</p>
+            </div>
+          </div>
+          <div class="branding-feature reveal reveal-delay-1">
+            <div class="branding-feature-icon">
+              <svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.686 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 5.503 17.461 2 12 2z"/></svg>
+            </div>
+            <div>
+              <h4>Section-based color styling</h4>
+              <p>Configure colors per section and choose design presets. Preview branded templates live before sending.</p>
+            </div>
+          </div>
+          <div class="branding-feature reveal reveal-delay-2">
+            <div class="branding-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <h4>Brand identity</h4>
+              <p>Define your brand name and save settings in your profile for consistent email rendering.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BULK EMAIL CAMPAIGNS ===== -->
+  <section class="bulk-campaigns" id="campaigns">
+    <div class="container">
+      <div class="section-label reveal">Bulk Email Campaigns</div>
+      <h2 class="section-title reveal">Send directly from PodPress — <em>no extra email tool required.</em></h2>
+      <p class="section-desc reveal">Create lists, import contacts, compose campaigns, and send to hundreds of subscribers — all from one workspace.</p>
+
+      <div class="campaign-layout">
+        <div>
+          <div class="campaign-steps">
+            <div class="campaign-step reveal">
+              <div class="campaign-step-num">1</div>
+              <div>
+                <h4>Create a list or import CSV</h4>
+                <p>Build contact lists or import contacts via CSV upload directly in-app.</p>
+              </div>
+            </div>
+            <div class="campaign-step reveal reveal-delay-1">
+              <div class="campaign-step-num">2</div>
+              <div>
+                <h4>Choose newsletter + subject line</h4>
+                <p>Select your generated newsletter and customize the subject line for your campaign.</p>
+              </div>
+            </div>
+            <div class="campaign-step reveal reveal-delay-2">
+              <div class="campaign-step-num">3</div>
+              <div>
+                <h4>Send campaigns in-app</h4>
+                <p>Send directly from PodPress and monitor delivery and engagement performance.</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal" style="margin-top:12px;">
+            <div class="repurpose-badge">
+              <span class="badge-dot" style="background:var(--ampersand);"></span>
+              Built-in analytics — opens, clicks, bounces, unsubscribes, and more
+            </div>
+          </div>
+        </div>
+
+        <div class="campaign-mockup reveal">
+          <div class="campaign-composer">
+            <div class="campaign-field">
+              <div class="campaign-field-label">Campaign Name</div>
+              <div class="campaign-field-value">Episode 47 — Creator Tools Weekly</div>
+            </div>
+            <div class="campaign-field">
+              <div class="campaign-field-label">Subject Line</div>
+              <div class="campaign-field-value">🎙 The future of creator tools (Ep. 47)</div>
+            </div>
+            <div class="campaign-field">
+              <div class="campaign-field-label">Recipients</div>
+              <div class="campaign-recipients">
+                <div class="campaign-recipients-icon">
+                  <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <span class="campaign-recipients-text">2,847 subscribers · Creator Camp List</span>
+              </div>
+            </div>
+            <button class="campaign-send-btn">
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Campaign
+            </button>
+          </div>
+          <div class="campaign-progress">
+            <div class="campaign-progress-bar">
+              <div class="campaign-progress-fill"></div>
+            </div>
+            <div class="campaign-progress-text">1,936 / 2,847 sent — 68% delivered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== YOUTUBE INPUT ===== -->
+  <section class="youtube-section" id="youtube">
+    <div class="container">
+      <div class="section-label reveal">YouTube Input</div>
+      <h2 class="section-title reveal">Paste a YouTube link and process it through the <em>same episode workflow.</em></h2>
+      <p class="section-desc reveal">PodPress ingests supported YouTube URLs, extracts audio, transcribes content, and enables newsletter generation from the resulting transcript.</p>
+
+      <div class="youtube-layout">
+        <div class="youtube-mockup reveal">
+          <div class="youtube-input-area">
+            <div class="youtube-input-field">https://youtube.com/watch?v=dQw4w9WgXcQ</div>
+            <button class="youtube-input-btn">Generate</button>
+          </div>
+          <div class="youtube-output">
+            <div class="youtube-block">
+              <div class="youtube-block-header">
+                <span class="youtube-ts-badge">3:24</span>
+                <span class="youtube-block-title">Introduction to Creator Economy</span>
+              </div>
+              <div class="youtube-block-desc">Overview of how the creator economy has evolved and why podcasts are the next growth frontier.</div>
+            </div>
+            <div class="youtube-block">
+              <div class="youtube-block-header">
+                <span class="youtube-ts-badge">12:08</span>
+                <span class="youtube-block-title">Top 3 Tools for Content Repurposing</span>
+              </div>
+              <div class="youtube-block-desc">Breakdown of AI tools that transform long-form content into newsletters, blogs, and social posts.</div>
+            </div>
+            <div class="youtube-block">
+              <div class="youtube-block-header">
+                <span class="youtube-ts-badge">28:45</span>
+                <span class="youtube-block-title">Monetization Strategies for Podcasters</span>
+              </div>
+              <div class="youtube-block-desc">Practical approaches to revenue through newsletters, sponsorships, and community building.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="youtube-features">
+          <div class="youtube-feature reveal">
+        
+            <div>
+              <h4>Automatic extraction</h4>
+              <p>PodPress ingests supported YouTube URLs, extracts audio, transcribes content, and enables newsletter generation from the resulting transcript.</p>
+            </div>
+          </div>
+          <div class="youtube-feature reveal reveal-delay-1">
+          
+            <div>
+              <h4>Timestamped output</h4>
+              <p>Generated content includes timestamps from the original video, organized into structured newsletter sections.</p>
+            </div>
+          </div>
+          <div class="youtube-feature reveal reveal-delay-2">
+            <div>
+              <h4>Works well for spoken-format video</h4>
+              <p>Interviews, webinars, tutorials — any spoken YouTube video can be processed through the full PodPress workflow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== HOW IT WORKS ===== -->
   <section class="how-it-works" id="how-it-works">
     <div class="container">
       <div class="section-label reveal">How It Works</div>
       <h2 class="section-title reveal">Three steps.<br><em>Zero effort.</em></h2>
-      <p class="section-desc reveal">From RSS feed to inbox-ready newsletter in under two minutes. No templates, no
-        formatting, no hassle.</p>
+      <p class="section-desc reveal">From audio, RSS, or YouTube input to transcript-backed, branded newsletter in under
+        two minutes.</p>
       <div class="steps">
         <div class="step-card reveal reveal-delay-1">
 
@@ -3695,7 +5014,7 @@
 
           <div class="step-number">03</div>
           <h3>Export &amp; Send</h3>
-          <p>One-click export to your favorite email platform. Clean HTML, Markdown, or plain text. Ready to hit send.
+          <p>Send directly from PodPress with built-in campaign tools, or export to your connected publishing platforms.
           </p>
         </div>
       </div>
@@ -3785,16 +5104,16 @@
             <div class="float-orb" style="width:60px;height:60px;background:var(--ampersand);bottom:15%;left:15%;">
             </div>
             <div class="export-widget">
-              <div class="export-chip">Newsletter</div>
-              <div class="export-chip">Transcript</div>
-              <div class="export-chip">RSS Feed</div>
-              <div class="export-chip">Custom Upload</div>
-              <div class="export-chip">Templates</div>
+              <div class="export-chip">Brief</div>
+              <div class="export-chip">Detailed</div>
+              <div class="export-chip">Summary</div>
+              <div class="export-chip">Highlights</div>
+              <div class="export-chip">Custom</div>
             </div>
           </div>
           <div class="bento-card-content">
             <h3>Multiple Output Formats</h3>
-            <p>HTML, Markdown, plain text, Substack, Mailchimp, ConvertKit, and more.</p>
+            <p>Brief, Detailed, Summary, Highlights — plus custom templates for any content type.</p>
           </div>
         </div>
 
