@@ -21,9 +21,27 @@
     '      <img src="logo-dark.png" alt="PodPress" data-logo />',
     '    </a>',
     '    <ul class="nav-links">',
+    '      <li><a href="index.html"  >Home</a></li>',
+    '      <li class="nav-item-features">',
+    '        <a href="' + base + '#features" class="nav-features-toggle" aria-haspopup="true" aria-expanded="false">Features</a>',
+    '        <div class="features-menu" role="menu" aria-label="Feature links">',
+    '          <h3 class="features-menu-title">Features</h3>',
+    '          <div class="features-menu-grid">',
+    '            <a class="features-menu-link" href="transcript-to-newsletter.html" role="menuitem"><h4>Transcript to Newsletter</h4><p>Turn transcripts into polished newsletters fast.</p></a>',
+    '            <a class="features-menu-link" href="youtube-to-newsletter.html" role="menuitem"><h4>YouTube to Newsletter</h4><p>Convert YouTube episodes into ready email drafts.</p></a>',
+    '            <a class="features-menu-link" href="rss-to-newsletter.html" role="menuitem"><h4>RSS to Newsletter</h4><p>Auto-fetch episodes and generate in minutes.</p></a>',
+    '            <a class="features-menu-link" href="podcast-to-blog.html" role="menuitem"><h4>Podcast to Blog</h4><p>Repurpose episodes into long-form blog posts.</p></a>',
+    '            <a class="features-menu-link" href="podcast-to-faq.html" role="menuitem"><h4>Podcast to FAQ</h4><p>Create instant FAQs from spoken content.</p></a>',
+    '            <a class="features-menu-link" href="podcast-to-insights.html" role="menuitem"><h4>Podcast to Key Insights</h4><p>Extract key points and takeaways automatically.</p></a>',
+    '            <a class="features-menu-link" href="content-repurposing.html" role="menuitem"><h4>Content Repurposing</h4><p>Generate multiple assets from one episode.</p></a>',
+    '            <a class="features-menu-link" href="content-automation.html" role="menuitem"><h4>Content Automation</h4><p>Automate your weekly content publishing workflow.</p></a>',
+    '            <a class="features-menu-link" href="integrations.html" role="menuitem"><h4>Integrations</h4><p>Publish your newsletter anywhere your audience already is.</p></a>',
+    '            <a class="features-menu-link" href="email-branding.html" role="menuitem"><h4>Email Branding</h4><p>Your brand in every send.</p></a>',
+    '            <a class="features-menu-link" href="email-campaigns.html" role="menuitem"><h4>Email Campaigns</h4><p>Send newsletters to your entire audience at once.</p></a>',
+    '          </div>',
+    '        </div>',
+    '      </li>',
     '      <li><a href="' + base + '#how-it-works">How It Works</a></li>',
-    '      <li><a href="' + base + '#features">Features</a></li>',
-    '      <li><a href="' + base + '#testimonials">Testimonials</a></li>',
     '      <li><a href="' + base + '#pricing">Pricing</a></li>',
     '      <li><a href="' + base + '#faq">FAQ</a></li>',
     '    </ul>',
@@ -44,9 +62,8 @@
     '  aria-label="Mobile navigation menu" aria-hidden="true">',
     '  <nav aria-label="Mobile">',
     '    <ul class="mobile-menu-links">',
-    '      <li><a href="' + base + '#how-it-works">How It Works</a></li>',
     '      <li><a href="' + base + '#features">Features</a></li>',
-    '      <li><a href="' + base + '#testimonials">Testimonials</a></li>',
+    '      <li><a href="' + base + '#how-it-works">How It Works</a></li>',
     '      <li><a href="' + base + '#pricing">Pricing</a></li>',
     '      <li><a href="' + base + '#faq">FAQ</a></li>',
     '    </ul>',
@@ -64,6 +81,32 @@
   /* ── Inject navbar at top of <body> (only if not already present) ── */
   if (!document.getElementById('navbar')) {
     document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
+  }
+
+  /* ── Features menu toggle (desktop click support) ── */
+  var navFeaturesItem = document.querySelector('.nav-item-features');
+  var navFeaturesToggle = document.querySelector('.nav-features-toggle');
+  if (navFeaturesItem && navFeaturesToggle) {
+    navFeaturesToggle.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) return;
+      e.preventDefault();
+      var isOpen = navFeaturesItem.classList.toggle('is-open');
+      navFeaturesToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!navFeaturesItem.contains(e.target)) {
+        navFeaturesItem.classList.remove('is-open');
+        navFeaturesToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        navFeaturesItem.classList.remove('is-open');
+        navFeaturesToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
   /* ── Scroll effect: add .scrolled class ── */

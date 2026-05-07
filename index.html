@@ -163,6 +163,10 @@
       list-style: none;
     }
 
+    .nav-links li {
+      position: relative;
+    }
+
     .nav-links a {
       font-size: 0.9rem;
       font-weight: 500;
@@ -172,6 +176,110 @@
 
     .nav-links a:hover {
       color: var(--ink);
+    }
+
+    .nav-item-features .nav-features-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-item-features .nav-features-toggle::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-right: 1.6px solid currentColor;
+      border-bottom: 1.6px solid currentColor;
+      transform: rotate(45deg) translateY(-1px);
+      opacity: 0.85;
+    }
+
+    .features-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-36%) translateY(10px);
+      width: min(980px, 92vw);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 22px 18px;
+      box-shadow: 0 24px 64px rgba(17, 17, 17, 0.1);
+      max-height: 72vh;
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+      z-index: 3000;
+    }
+
+    .nav-item-features:hover .features-menu,
+    .nav-item-features:focus-within .features-menu,
+    .nav-item-features.is-open .features-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-36%) translateY(0);
+    }
+
+    .features-menu-title {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      color: var(--ink);
+      margin: 0 0 14px;
+    }
+
+    .features-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 24px;
+      row-gap: 12px;
+    }
+
+    .features-menu-link {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+      color: inherit;
+    }
+
+    .features-menu-link:hover {
+      background: var(--bg);
+      border-color: var(--border);
+    }
+
+    .features-menu-link h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+
+    .features-menu-link p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    @media (max-width: 1200px) {
+      .features-menu {
+        width: min(860px, 92vw);
+        transform: translateX(-42%) translateY(10px);
+      }
+
+      .nav-item-features:hover .features-menu,
+      .nav-item-features:focus-within .features-menu,
+      .nav-item-features.is-open .features-menu {
+        transform: translateX(-42%) translateY(0);
+      }
+
+      .features-menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     .nav-cta {
@@ -201,7 +309,6 @@
     .btn-primary:hover {
       background: #e84e15;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(255, 90, 31, 0.25);
     }
 
     .btn-ghost {
@@ -2020,6 +2127,78 @@
       transition-delay: 0.18s;
     }
 
+    /* ========== SUPPORTED INTEGRATIONS ========== */
+    .supported-integrations {
+      background: transparent !important;
+    }
+
+    .supported-integrations .header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .supported-integrations .header .section-label {
+      justify-content: center;
+    }
+
+    .supported-integrations .header .section-desc {
+      margin: 0 auto;
+      max-width: 720px;
+    }
+
+    .integrations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .integration-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: transparent;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .integration-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--cornflower);
+    }
+
+    .integration-icon {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+
+    .integration-icon svg {
+      display: block;
+      fill: currentColor;
+    }
+
+    .integration-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .integration-tagline {
+      font-size: 0.9rem;
+      color: var(--cornflower);
+      margin-bottom: 10px;
+    }
+
+    .integration-description {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
     /* ========== TESTIMONIALS ========== */
     .testimonials .container>.section-title {
       text-align: center;
@@ -2639,11 +2818,19 @@
         max-width: 700px;
         margin: 0 auto;
       }
+
+      .integrations-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 768px) {
       section {
         padding: 80px 0;
+      }
+
+      .features-menu {
+        display: none;
       }
 
       .nav-links {
@@ -2702,6 +2889,10 @@
       }
 
       .how-it-works .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .integrations-grid {
         grid-template-columns: 1fr;
       }
 
@@ -3056,7 +3247,6 @@
     [data-theme="dark"] .transcript-mockup {
       background: rgba(22, 26, 34, 0.85);
       border-color: var(--border);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
     }
 
     [data-theme="dark"] .transcript-mockup-bar {
@@ -3519,7 +3709,6 @@
 
     /* ========== TRANSCRIPT STUDIO ========== */
     .transcript-studio {
-      background: var(--bg);
       overflow: hidden;
     }
 
@@ -3586,7 +3775,6 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 24px 80px rgba(17, 17, 17, 0.08);
     }
 
     .transcript-mockup-bar {
@@ -3849,9 +4037,7 @@
     }
 
     /* ========== EMAIL BRANDING ========== */
-    .email-branding {
-      background: var(--bg);
-    }
+  
 
     .branding-layout {
       display: grid;
@@ -4054,7 +4240,6 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 24px;
-      box-shadow: 0 24px 80px rgba(17, 17, 17, 0.06);
     }
 
     .campaign-composer {
@@ -4175,9 +4360,6 @@
     }
 
     /* ========== YOUTUBE INPUT ========== */
-    .youtube-section {
-      background: var(--bg);
-    }
 
     .youtube-layout {
       display: grid;
@@ -4192,7 +4374,6 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 24px 80px rgba(17, 17, 17, 0.08);
     }
 
     .youtube-input-area {
@@ -4216,7 +4397,7 @@
 
     .youtube-input-btn {
       padding: 8px 16px;
-      background: #FF0000;
+      background: #6B8FFF;
       color: #fff;
       border-radius: var(--radius-sm);
       font-size: 0.72rem;
@@ -4254,7 +4435,7 @@
       font-size: 0.6rem;
       font-weight: 700;
       color: #fff;
-      background: #FF0000;
+      background: #6B8FFF;
       padding: 2px 8px;
       border-radius: var(--radius-full);
       font-variant-numeric: tabular-nums;
@@ -4310,6 +4491,36 @@
       font-size: 0.8rem;
       color: var(--text-muted);
       line-height: 1.5;
+    }
+
+    /* ========== CENTERED HEADERS (workflow deep-dive sections) ========== */
+    .transcript-studio>.container>.section-label,
+    .email-branding>.container>.section-label,
+    .bulk-campaigns>.container>.section-label,
+    .youtube-section>.container>.section-label {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .transcript-studio>.container>.section-title,
+    .email-branding>.container>.section-title,
+    .bulk-campaigns>.container>.section-title,
+    .youtube-section>.container>.section-title {
+      text-align: center;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .transcript-studio>.container>.section-desc,
+    .email-branding>.container>.section-desc,
+    .bulk-campaigns>.container>.section-desc,
+    .youtube-section>.container>.section-desc {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 760px;
     }
 
     /* ========== RESPONSIVE FOR NEW SECTIONS ========== */
@@ -4376,11 +4587,59 @@
         <img src="logo-dark.png" alt="PodPress" data-logo />
       </a>
       <ul class="nav-links">
+        <li class="nav-item-features">
+          <a href="#features" class="nav-features-toggle" aria-haspopup="true" aria-expanded="false">Features</a>
+          <div class="features-menu" role="menu" aria-label="Feature links">
+            <h3 class="features-menu-title">Features</h3>
+            <div class="features-menu-grid">
+              <a class="features-menu-link" href="transcript-to-newsletter.html" role="menuitem">
+                <h4>Transcript to Newsletter</h4>
+                <p>Turn transcripts into polished newsletters fast.</p>
+              </a>
+              <a class="features-menu-link" href="youtube-to-newsletter.html" role="menuitem">
+                <h4>YouTube to Newsletter</h4>
+                <p>Convert YouTube episodes into ready email drafts.</p>
+              </a>
+              <a class="features-menu-link" href="rss-to-newsletter.html" role="menuitem">
+                <h4>RSS to Newsletter</h4>
+                <p>Auto-fetch episodes and generate in minutes.</p>
+              </a>
+              <a class="features-menu-link" href="podcast-to-blog.html" role="menuitem">
+                <h4>Podcast to Blog</h4>
+                <p>Repurpose episodes into long-form blog posts.</p>
+              </a>
+              <a class="features-menu-link" href="podcast-to-faq.html" role="menuitem">
+                <h4>Podcast to FAQ</h4>
+                <p>Create instant FAQs from spoken content.</p>
+              </a>
+              <a class="features-menu-link" href="podcast-to-insights.html" role="menuitem">
+                <h4>Podcast to Key Insights</h4>
+                <p>Extract key points and takeaways automatically.</p>
+              </a>
+              <a class="features-menu-link" href="content-repurposing.html" role="menuitem">
+                <h4>Content Repurposing</h4>
+                <p>Generate multiple assets from one episode.</p>
+              </a>
+              <a class="features-menu-link" href="content-automation.html" role="menuitem">
+                <h4>Content Automation</h4>
+                <p>Automate your weekly content publishing workflow.</p>
+              </a>
+              <a class="features-menu-link" href="integrations.html" role="menuitem">
+                <h4>Integrations</h4>
+                <p>Publish your newsletter anywhere your audience already is.</p>
+              </a>
+              <a class="features-menu-link" href="email-branding.html" role="menuitem">
+                <h4>Email Branding</h4>
+                <p>Your brand in every send.</p>
+              </a>
+              <a class="features-menu-link" href="email-campaigns.html" role="menuitem">
+                <h4>Email Campaigns</h4>
+                <p>Send newsletters to your entire audience at once.</p>
+              </a>
+            </div>
+          </div>
+        </li>
         <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#transcript">Transcript</a></li>
-        <li><a href="#templates">Templates</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#campaigns">Campaigns</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -4404,11 +4663,8 @@
     aria-hidden="true">
     <nav aria-label="Mobile">
       <ul class="mobile-menu-links">
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#transcript">Transcript</a></li>
-        <li><a href="#templates">Templates</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#campaigns">Campaigns</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -4591,6 +4847,38 @@
     </div>
   </section>
 
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-label reveal">How It Works</div>
+      <h2 class="section-title reveal">Three steps.<br><em>Zero effort.</em></h2>
+      <p class="section-desc reveal">From audio, RSS, or YouTube input to transcript-backed, branded newsletter in under
+        two minutes.</p>
+      <div class="steps">
+        <div class="step-card reveal reveal-delay-1">
+
+          <div class="step-number">01</div>
+          <h3>Add your podcast RSS, MP3, or YouTube episode</h3>
+          <p>Connect your podcast in seconds. We pull every episode automatically &mdash; titles, descriptions,
+            timestamps, and audio.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-2">
+
+          <div class="step-number">02</div>
+          <h3>AI Does The Heavy Lifting</h3>
+          <p>Our AI listens, summarizes, and structures your episode into a clean newsletter with key takeaways, quotes,
+            and highlights.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-3">
+
+          <div class="step-number">03</div>
+          <h3>Export &amp; Send</h3>
+          <p>Send directly from PodPress with built-in campaign tools, or export to your connected publishing platforms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
    <!-- ===== TRANSCRIPT STUDIO ===== -->
   <section class="transcript-studio" id="transcript">
@@ -4988,35 +5276,87 @@
     </div>
   </section>
 
-  <!-- ===== HOW IT WORKS ===== -->
-  <section class="how-it-works" id="how-it-works">
+  <!-- ===== SUPPORTED INTEGRATIONS ===== -->
+  <section class="supported-integrations" id="supported-integrations">
     <div class="container">
-      <div class="section-label reveal">How It Works</div>
-      <h2 class="section-title reveal">Three steps.<br><em>Zero effort.</em></h2>
-      <p class="section-desc reveal">From audio, RSS, or YouTube input to transcript-backed, branded newsletter in under
-        two minutes.</p>
-      <div class="steps">
-        <div class="step-card reveal reveal-delay-1">
+      <div class="header">
+        <div class="section-label reveal" style="justify-content:center;">Supported integrations</div>
+        <h2 class="section-title reveal">Connect PodPress with the tools your <em>audience already uses.</em></h2>
+        <p class="section-desc reveal">Publish each episode where your audience already reads and engages.</p>
+      </div>
 
-          <div class="step-number">01</div>
-          <h3>Paste Your RSS Feed</h3>
-          <p>Connect your podcast in seconds. We pull every episode automatically &mdash; titles, descriptions,
-            timestamps, and audio.</p>
-        </div>
-        <div class="step-card reveal reveal-delay-2">
+      <div class="integrations-grid">
+        <article class="integration-card reveal">
+          <div class="integration-icon" aria-hidden="true">
+            <svg width="32" height="48" viewBox="0 0 325.51 308.78" class="h-6 w-auto fill-current">
+              <path d="M283.19,145.14H42.6c-6.13,0-11.14-5.04-11.14-11.21v-17.09c0-19.33,15.59-35.02,34.81-35.02h192.97c19.21,0,34.81,15.69,34.81,35.02v17.09c.28,6.16-4.73,11.21-10.86,11.21Z" />
+              <path d="M232.51,63.32H93.28c-6.13,0-11.42-5.04-11.42-11.49C81.87,23.26,104.98,0,133.38,0h59.03c28.4,0,51.51,23.26,51.51,51.84,0,6.44-5.01,11.49-11.42,11.49Z" />
+              <path d="M294.33,163.63H31.47c-17.26,0-31.47,14.29-31.47,31.66s14.2,31.66,31.47,31.66h93.28c3.34-17.93,18.93-31.66,37.87-31.66s34.81,13.73,38.15,31.66h93.28c17.26,0,31.47-14.29,31.47-31.66s-13.92-31.66-31.19-31.66Z" />
+              <path d="M282.91,245.45h-81.59v63.32h61.26c17.26,0,31.47-14.29,31.47-31.66v-20.17c.28-6.16-4.73-11.49-11.14-11.49Z" />
+              <path d="M42.6,245.45c-6.13,0-11.42,5.04-11.42,11.49v20.17c0,17.37,14.2,31.66,31.47,31.66h61.26v-63.32c.28,0-81.31,0-81.31,0Z" />
+            </svg>
+          </div>
+          <h3 class="integration-name">Beehiiv</h3>
+          <p class="integration-tagline">Publish newsletters directly</p>
+          <p class="integration-description">Send PodPress drafts to Beehiiv without export or formatting fixes.</p>
+        </article>
 
-          <div class="step-number">02</div>
-          <h3>AI Does The Heavy Lifting</h3>
-          <p>Our AI listens, summarizes, and structures your episode into a clean newsletter with key takeaways, quotes,
-            and highlights.</p>
-        </div>
-        <div class="step-card reveal reveal-delay-3">
+        <article class="integration-card reveal reveal-delay-1">
+          <div class="integration-icon" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 28 28" class="h-6 w-6 fill-current">
+              <path d="M14 5.6c-4.6 0-8.4 3.7-8.4 8.4s3.7 8.4 8.4 8.4 8.4-3.7 8.4-8.4-3.7-8.4-8.4-8.4zm-1.4 12.6c-.9 0-1.6-.5-1.6-1.2 0-.3.2-.5.3-.9l.3-.4c.2-.2.3-.3.4-.4.3-.3.5-.4.9-.4s.5.1.9.4c.2.2.3.3.4.4l.3.4c.2.3.3.5.3.9 0 .7-.5 1.2-1.4 1.2zm2.8-4.2c-.9 0-1.6-.5-1.6-1.2s.7-1.2 1.6-1.2 1.6.5 1.6 1.2-.7 1.2-1.6 1.2z" />
+            </svg>
+          </div>
+          <h3 class="integration-name">Mailchimp</h3>
+          <p class="integration-tagline">Send to your audience with one click</p>
+          <p class="integration-description">Push ready drafts to Mailchimp with branding and segments preserved.</p>
+        </article>
 
-          <div class="step-number">03</div>
-          <h3>Export &amp; Send</h3>
-          <p>Send directly from PodPress with built-in campaign tools, or export to your connected publishing platforms.
-          </p>
-        </div>
+        <article class="integration-card reveal reveal-delay-2">
+          <div class="integration-icon" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 28 28" class="h-6 w-6 fill-current">
+              <circle cx="9.5" cy="14" r="4.2" />
+              <ellipse cx="16.5" cy="14" rx="2.1" ry="4.2" />
+              <ellipse cx="21" cy="14" rx="0.7" ry="3.5" />
+            </svg>
+          </div>
+          <h3 class="integration-name">Medium</h3>
+          <p class="integration-tagline">Reach readers who prefer long-form articles</p>
+          <p class="integration-description">Turn episode notes into clean Medium-ready stories in one step.</p>
+        </article>
+
+        <article class="integration-card reveal">
+          <div class="integration-icon" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 28 28" class="h-6 w-6 fill-current">
+              <path d="M18.5 9c-1.1-.5-2.2-.8-3.3-1.1-.2.3-.3.5-.4.8-1.2-.2-2.5-.2-3.7 0-.1-.3-.3-.5-.4-.8-1.1.3-2.2.5-3.3 1.1-2 3-2.6 6-2.3 9.1 1.4 1.1 2.7 1.8 4.1 2.2.3-.4.5-.8.8-1.2-.4-.2-.8-.4-1.2-.7.1-.1.2-.2.4-.4 2.3 1.1 5 1.1 7.3 0 .1.1.3.3.4.4-.4.3-.8.5-1.2.7.3.4.5.8.8 1.2 1.4-.4 2.7-1.1 4.1-2.2.3-3.4-.7-6.3-2.3-9.1zm-8 7.3c-.8 0-1.5-.8-1.5-1.8s.7-1.8 1.5-1.8 1.5.8 1.5 1.8-.7 1.8-1.5 1.8zm5.2 0c-.8 0-1.5-.8-1.5-1.8s.7-1.8 1.5-1.8 1.5.8 1.5 1.8-.7 1.8-1.5 1.8z" />
+            </svg>
+          </div>
+          <h3 class="integration-name">Discord</h3>
+          <p class="integration-tagline">Post episode recaps automatically</p>
+          <p class="integration-description">Auto-post highlights, recaps, and links to your Discord community.</p>
+        </article>
+
+        <article class="integration-card reveal reveal-delay-1">
+          <div class="integration-icon" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 28 28" class="h-6 w-6 fill-current">
+              <path d="M14 5.6c-4.6 0-8.4 3.7-8.4 8.4s3.7 8.4 8.4 8.4 8.4-3.7 8.4-8.4-3.7-8.4-8.4-8.4zm3.9 5.8l-1.2 5.8c-.2.5-.4.7-.9.4l-2.3-1.7-1.1 1c-.2.2-.3.3-.5.3l.2-2.5 4.6-4.2c.2-.2-.2-.3-.4-.2l-5.7 3.6-2.4-.7c-.5-.2-.5-.5.2-.9l9.2-3.6c.4-.2.9.1.7.9-.1.3-.1.3-.3.3z" />
+            </svg>
+          </div>
+          <h3 class="integration-name">Telegram</h3>
+          <p class="integration-tagline">Post episode recaps automatically</p>
+          <p class="integration-description">Share chapterized summaries to Telegram channels instantly.</p>
+        </article>
+
+        <article class="integration-card reveal reveal-delay-2">
+          <div class="integration-icon" aria-hidden="true">
+            <svg width="32" height="48" viewBox="0 0 120 120" class="h-5 w-5 fill-current">
+              <path d="M90.7 12H105L66.7 56.3 112 108H78.2L51.1 76.3 20.5 108H6.2l40.3-44.9L3 12h34.8l24.5 28.2L90.7 12Zm-6 85.9h9.3L35.8 22.8h-9.9l58.8 75.1Z" />
+            </svg>
+          </div>
+          <h3 class="integration-name">X (Twitter)</h3>
+          <p class="integration-tagline">Post episode recaps automatically</p>
+          <p class="integration-description">Schedule quotes and timestamps to X with your newsletter launch.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -5645,6 +5985,9 @@
             <li><a href="podcast-to-blog.html">Podcast to Blog</a></li>
             <li><a href="podcast-to-faq.html">Podcast to FAQ</a></li>
             <li><a href="podcast-to-insights.html">Podcast to Key Insights</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
+            <li><a href="email-branding.html">Email Branding</a></li>
+            <li><a href="email-campaigns.html">Email Campaigns</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -5777,6 +6120,7 @@
     // === Smooth scroll for nav links ===
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', (e) => {
+        if (link.classList.contains('nav-features-toggle')) return;
         const target = document.querySelector(link.getAttribute('href'));
         if (target) {
           e.preventDefault();
@@ -5784,6 +6128,32 @@
         }
       });
     });
+
+    // === Features menu toggle (desktop click support) ===
+    const navFeaturesItem = document.querySelector('.nav-item-features');
+    const navFeaturesToggle = document.querySelector('.nav-features-toggle');
+    if (navFeaturesItem && navFeaturesToggle) {
+      navFeaturesToggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) return;
+        e.preventDefault();
+        const isOpen = navFeaturesItem.classList.toggle('is-open');
+        navFeaturesToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!navFeaturesItem.contains(e.target)) {
+          navFeaturesItem.classList.remove('is-open');
+          navFeaturesToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          navFeaturesItem.classList.remove('is-open');
+          navFeaturesToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
 
     // === Custom Cursor ===
     (function () {

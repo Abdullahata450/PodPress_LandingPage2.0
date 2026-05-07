@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integrations for Podcast Newsletters - Telegram, Discord, Medium, Beehiiv, X, Mailchimp | PodPress</title>
+  <meta name="description" content="Publish your podcast newsletter anywhere your audience already is. Connect PodPress with Telegram, Discord, Medium, Beehiiv, X, and Mailchimp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="pages.css" />
+  <style>
+    body.ig-page {
+      background:
+        radial-gradient(circle at top left, rgba(58,103,255,0.07), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(255,90,31,0.04), transparent 22%),
+        var(--bg);
+    }
+    .ig-hero { background: var(--surface); padding: 152px 0 108px; text-align: center; }
+    .ig-hero-inner { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+    .ig-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cornflower); border: 1.5px solid rgba(58,103,255,0.22); border-radius: 100px; padding: 7px 16px; margin-bottom: 24px; background: rgba(255,255,255,0.72); }
+    .ig-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .ig-hero h1 { font-family: var(--font-display); font-size: clamp(2.6rem, 4.4vw, 3.6rem); font-weight: 400; line-height: 1.08; letter-spacing: -0.04em; color: var(--ink); margin-bottom: 16px; }
+    .ig-hero p { font-size: 0.97rem; color: var(--text-muted); line-height: 1.82; max-width: 620px; margin: 0 auto 32px; }
+
+    .ig-section { padding: 96px 0; }
+    .ig-section.alt { background: var(--surface); }
+    .ig-head { max-width: 700px; margin: 0 auto 48px; text-align: center; }
+    .ig-head h2 { font-family: var(--font-display); font-size: clamp(1.9rem, 2.8vw, 2.5rem); font-weight: 400; letter-spacing: -0.03em; margin-bottom: 12px; color: var(--ink); }
+    .ig-head p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
+
+    .ig-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1080px; margin: 0 auto; }
+    .ig-card { background: rgba(255,255,255,0.82); border: 1px solid rgba(221,217,211,0.94); border-radius: 20px; padding: 22px; transition: border-color .2s ease, transform .2s ease; }
+    .ig-card:hover { border-color: rgba(58,103,255,0.25); transform: translateY(-2px); }
+    .ig-card h3 { font-size: 1rem; margin-bottom: 6px; color: var(--ink); }
+    .ig-card p { font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); margin-bottom: 10px; }
+    .ig-chip { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cornflower); background: rgba(58,103,255,0.1); border-radius: 999px; padding: 4px 10px; }
+
+    .ig-list-wrap { max-width: 880px; margin: 0 auto; background: rgba(255,255,255,0.82); border: 1px solid rgba(221,217,211,0.94); border-radius: 24px; padding: 26px 28px; }
+    .ig-list { list-style: none; display: flex; flex-direction: column; }
+    .ig-list li { padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 0.92rem; color: var(--ink); line-height: 1.7; }
+    .ig-list li:last-child { border-bottom: none; }
+    .ig-list strong { color: var(--cornflower); }
+
+    .sp-faq { padding: 96px 0 110px; }
+    .sp-faq-list { max-width: 860px; }
+
+    .cta-section {
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .cta-inner {
+      background: #F7F5F2;
+      border: 1px solid rgba(221,217,211,0.5);
+      border-radius: 20px;
+      padding: 80px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--slate);
+      margin-bottom: 16px;
+    }
+    .section-label::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--cornflower);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+    .section-title em { font-style: italic; color: var(--ampersand); }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+    .btn-large { padding: 16px 36px; font-size: 1rem; }
+
+    [data-theme="dark"] .cta-section { background: var(--bg); }
+    [data-theme="dark"] .cta-inner { background: var(--surface); border-color: var(--border); }
+
+    @media (max-width: 960px) { .ig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 768px) { .ig-grid { grid-template-columns: 1fr; } .ig-hero { padding: 132px 0 84px; } .cta-inner { padding: 56px 24px; } }
+  </style>
+</head>
+<body class="ig-page">
+  <section class="sp-hero ig-hero">
+    <div class="ig-hero-inner">
+      <span class="ig-badge">Integrations</span>
+      <h1>One newsletter. Every channel.</h1>
+      <p>Connect PodPress to the platforms you already use and publish your generated podcast newsletter without leaving the app.</p>
+      <a href="https://app.podpress.so/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Connect an integration &rarr;</a>
+    </div>
+  </section>
+
+  <section class="ig-section">
+    <div class="sp-container">
+      <div class="ig-head">
+        <h2>Supported platforms</h2>
+        <p>Post once and distribute everywhere your audience already follows you.</p>
+      </div>
+      <div class="ig-grid">
+        <article class="ig-card"><h3>Telegram</h3><p>Send formatted newsletters into Telegram channels or groups with bot-based delivery.</p><span class="ig-chip">Bot + Chat ID</span></article>
+        <article class="ig-card"><h3>Discord</h3><p>Post recaps and updates directly to your Discord community via webhooks.</p><span class="ig-chip">Webhook URL</span></article>
+        <article class="ig-card"><h3>Medium</h3><p>Republish polished content as a Medium-ready article in your preferred format.</p><span class="ig-chip">HTML or Markdown</span></article>
+        <article class="ig-card"><h3>Beehiiv</h3><p>Push generated newsletters to beehiiv posts using secure publication credentials.</p><span class="ig-chip">API Key + Publication</span></article>
+        <article class="ig-card"><h3>X (Twitter)</h3><p>Share newsletter snippets, quotes, and links through authenticated posting credentials.</p><span class="ig-chip">OAuth Credentials</span></article>
+        <article class="ig-card"><h3>Mailchimp</h3><p>Send newsletters to your Mailchimp audience with list-level targeting support.</p><span class="ig-chip">API + Data Center + List</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ig-section alt">
+    <div class="sp-container">
+      <div class="ig-head">
+        <h2>Why creators choose this workflow</h2>
+      </div>
+      <div class="ig-list-wrap">
+        <ul class="ig-list">
+          <li><strong>One-click publishing:</strong> Select an integration and post without copy-paste.</li>
+          <li><strong>Provider-level validation:</strong> Credentials are checked against platform-specific rules.</li>
+          <li><strong>Encrypted secrets:</strong> Tokens, keys, and webhook values are securely stored.</li>
+          <li><strong>User-scoped ownership:</strong> Every integration is isolated to the current account.</li>
+          <li><strong>Consistent distribution:</strong> Reuse one generated newsletter across multiple channels.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-faq" id="faq">
+    <div class="sp-container">
+      <div class="ig-head">
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="sp-faq-list">
+        <article class="sp-faq-item is-open">
+          <button class="sp-faq-q" type="button">Can I publish to Telegram automatically?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. Connect a Telegram bot and selected chat ID, then post your generated newsletter directly from PodPress.</div></div>
+        </article>
+        <article class="sp-faq-item">
+          <button class="sp-faq-q" type="button">Does PodPress support Discord webhooks?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. Add your webhook URL (and optional thread ID) to post updates into Discord channels.</div></div>
+        </article>
+        <article class="sp-faq-item">
+          <button class="sp-faq-q" type="button">Can I publish to Medium and beehiiv from one newsletter?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. Connect both providers and publish the same generated content to each platform.</div></div>
+        </article>
+        <article class="sp-faq-item">
+          <button class="sp-faq-q" type="button">Are my integration credentials secure?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. Sensitive values are encrypted and scoped to your account.</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="section-label" style="justify-content:center;">Start publishing</div>
+        <h2 class="section-title">Connect your first integration.<br><em>Publish everywhere faster.</em></h2>
+        <p class="section-desc" style="text-align:center;max-width:460px;margin:0 auto 40px;">Pick a provider, add credentials, and publish your next podcast newsletter without extra tools.</p>
+        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <a href="https://app.podpress.so/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Get Started Free &rarr;</a>
+          <a href="#" class="btn btn-ghost btn-large">Watch Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo"><img src="logo-dark.png" alt="PodPress" /></a>
+          <p>AI-powered podcast automation. Turn episodes into newsletters, show notes, and social content in minutes.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="transcript-to-newsletter.html">Transcript to Newsletter</a></li>
+            <li><a href="youtube-to-newsletter.html">YouTube to Newsletter</a></li>
+            <li><a href="rss-to-newsletter.html">RSS to Newsletter</a></li>
+            <li><a href="podcast-to-blog.html">Podcast to Blog</a></li>
+            <li><a href="podcast-to-faq.html">Podcast to FAQ</a></li>
+            <li><a href="podcast-to-insights.html">Podcast to Key Insights</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="ai-newsletter-generator.html">AI Newsletter Generator</a></li>
+            <li><a href="newsletter-software.html">Newsletter Software</a></li>
+            <li><a href="transcript-generator.html">Transcript Generator</a></li>
+            <li><a href="content-repurposing.html">Content Repurposing</a></li>
+            <li><a href="content-automation.html">Content Automation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 PodPress. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <script src="navbar.js"></script>
+  <script src="theme.js"></script>
+  <script src="premium.js"></script>
+  <script>
+    document.querySelectorAll('.sp-faq-q').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.sp-faq-item');
+        const open = item.classList.contains('is-open');
+        document.querySelectorAll('.sp-faq-item').forEach((i) => i.classList.remove('is-open'));
+        if (!open) item.classList.add('is-open');
+      });
+    });
+  </script>
+</body>
+</html>

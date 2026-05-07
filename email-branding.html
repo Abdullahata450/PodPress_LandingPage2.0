@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Branded Podcast Newsletter Emails - Logo, Colors, Templates | PodPress</title>
+  <meta name="description" content="Make every podcast newsletter feel like your brand. Upload logo, set section colors, pick a design preset, and preview before sending." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="pages.css" />
+  <style>
+    body.eb-page {
+      background:
+        radial-gradient(circle at top left, rgba(58,103,255,0.07), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(255,90,31,0.04), transparent 22%),
+        var(--bg);
+    }
+    .eb-hero { background: var(--surface); padding: 152px 0 108px; text-align: center; }
+    .eb-hero-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .eb-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cornflower); border: 1.5px solid rgba(58,103,255,0.22); border-radius: 100px; padding: 7px 16px; margin-bottom: 24px; background: rgba(255,255,255,0.72); }
+    .eb-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .eb-hero h1 { font-family: var(--font-display); font-size: clamp(2.6rem, 4.4vw, 3.6rem); font-weight: 400; line-height: 1.08; letter-spacing: -0.04em; color: var(--ink); margin-bottom: 16px; }
+    .eb-hero p { font-size: 0.97rem; color: var(--text-muted); line-height: 1.82; max-width: 640px; margin: 0 auto 32px; }
+
+    .eb-section { padding: 96px 0; }
+    .eb-section.alt { background: var(--surface); }
+    .eb-head { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+    .eb-head h2 { font-family: var(--font-display); font-size: clamp(1.9rem, 2.8vw, 2.5rem); font-weight: 400; letter-spacing: -0.03em; margin-bottom: 12px; color: var(--ink); }
+    .eb-head p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
+
+    .eb-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 980px; margin: 0 auto; }
+    .eb-card { background: rgba(255,255,255,0.82); border: 1px solid rgba(221,217,211,0.94); border-radius: 20px; padding: 22px; transition: border-color .2s ease, transform .2s ease; }
+    .eb-card:hover { border-color: rgba(58,103,255,0.25); transform: translateY(-2px); }
+    .eb-card h3 { font-size: 1rem; margin-bottom: 8px; color: var(--ink); }
+    .eb-card p { font-size: 0.88rem; line-height: 1.65; color: var(--text-muted); }
+
+    .eb-presets { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .eb-preset { border: 1px solid rgba(221,217,211,0.94); border-radius: 16px; padding: 16px; background: rgba(255,255,255,0.82); }
+    .eb-preset h4 { font-size: 0.9rem; margin-bottom: 5px; color: var(--ink); }
+    .eb-preset p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+    .sp-faq { padding: 96px 0 110px; }
+    .sp-faq-list { max-width: 860px; }
+
+    .cta-section {
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .cta-inner {
+      background: #F7F5F2;
+      border: 1px solid rgba(221,217,211,0.5);
+      border-radius: 20px;
+      padding: 80px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--slate);
+      margin-bottom: 16px;
+    }
+    .section-label::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--cornflower);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+    .section-title em { font-style: italic; color: var(--ampersand); }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+    .btn-large { padding: 16px 36px; font-size: 1rem; }
+
+    [data-theme="dark"] .cta-section { background: var(--bg); }
+    [data-theme="dark"] .cta-inner { background: var(--surface); border-color: var(--border); }
+
+    @media (max-width: 960px) { .eb-presets { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .eb-grid, .eb-presets { grid-template-columns: 1fr; } .eb-hero { padding: 132px 0 84px; } .cta-inner { padding: 56px 24px; } }
+  </style>
+</head>
+<body class="eb-page">
+  <section class="sp-hero eb-hero">
+    <div class="eb-hero-inner">
+      <span class="eb-badge">Email Branding</span>
+      <h1>Your brand, in every send.</h1>
+      <p>Upload your logo, define your colors, pick a designed preset, and PodPress applies your identity to every newsletter you generate.</p>
+      <a href="https://app.podpress.so/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Set up your branding &rarr;</a>
+    </div>
+  </section>
+
+  <section class="eb-section">
+    <div class="sp-container">
+      <div class="eb-head">
+        <h2>Branding controls you get</h2>
+      </div>
+      <div class="eb-grid">
+        <article class="eb-card"><h3>Logo + brand name</h3><p>Replace generic sender identity with your logo and display name in email headers.</p></article>
+        <article class="eb-card"><h3>Section-level color palette</h3><p>Control colors for header, main content, CTA area, and footer to match your visual system.</p></article>
+        <article class="eb-card"><h3>Live render previews</h3><p>Preview your email in desktop and mobile layouts before saving branding changes.</p></article>
+        <article class="eb-card"><h3>Preset-aware theming</h3><p>Apply your branding on top of professionally designed templates, not empty layouts.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="eb-section alt">
+    <div class="sp-container">
+      <div class="eb-head">
+        <h2>Built-in template presets</h2>
+        <p>Choose the design language that fits your podcast and audience.</p>
+      </div>
+      <div class="eb-presets">
+        <article class="eb-preset"><h4>Classic Editorial</h4><p>Balanced hierarchy for long-form episode narratives.</p></article>
+        <article class="eb-preset"><h4>Bauhaus</h4><p>Geometric blocks and strong visual contrast.</p></article>
+        <article class="eb-preset"><h4>Neubrutalist</h4><p>Bold style with assertive typography and structure.</p></article>
+        <article class="eb-preset"><h4>Teal</h4><p>Modern calm palette for clean, readable newsletters.</p></article>
+        <article class="eb-preset"><h4>Candlelight</h4><p>Warm premium tone for story-led podcast formats.</p></article>
+        <article class="eb-preset"><h4>Minimal Light</h4><p>Simple lightweight style for no-noise email reading.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-faq" id="faq">
+    <div class="sp-container">
+      <div class="eb-head">
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="sp-faq-list">
+        <article class="sp-faq-item is-open">
+          <button class="sp-faq-q" type="button">Can I add my own logo to emails?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. You can use uploaded assets or logo URLs and apply them across branded renders.</div></div>
+        </article>
+        <article class="sp-faq-item">
+          <button class="sp-faq-q" type="button">Can I control colors for each section?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. You can set foreground and background colors for header, content, CTA, and footer areas.</div></div>
+        </article>
+        <article class="sp-faq-item">
+          <button class="sp-faq-q" type="button">Do I get multiple template options?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. PodPress includes multiple design presets and applies your branding consistently.</div></div>
+        </article>
+        <article class="sp-faq-item">
+          <button class="sp-faq-q" type="button">Will branded emails stay consistent across sends?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. Saved brand settings are reused in future renders for consistent campaign identity.</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="section-label" style="justify-content:center;">Brand once</div>
+        <h2 class="section-title">Set branding once.<br><em>Stay branded forever.</em></h2>
+        <p class="section-desc" style="text-align:center;max-width:460px;margin:0 auto 40px;">Every newsletter you send carries your logo, palette, and voice.</p>
+        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <a href="https://app.podpress.so/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Get Started Free &rarr;</a>
+          <a href="#" class="btn btn-ghost btn-large">Watch Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo"><img src="logo-dark.png" alt="PodPress" /></a>
+          <p>AI-powered podcast automation. Turn episodes into newsletters, show notes, and social content in minutes.</p>
+        </div>
+        <div class="footer-col"><h4>Features</h4><ul><li><a href="transcript-to-newsletter.html">Transcript to Newsletter</a></li><li><a href="youtube-to-newsletter.html">YouTube to Newsletter</a></li><li><a href="rss-to-newsletter.html">RSS to Newsletter</a></li><li><a href="podcast-to-blog.html">Podcast to Blog</a></li><li><a href="podcast-to-faq.html">Podcast to FAQ</a></li><li><a href="podcast-to-insights.html">Podcast to Key Insights</a></li></ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul><li><a href="ai-newsletter-generator.html">AI Newsletter Generator</a></li><li><a href="newsletter-software.html">Newsletter Software</a></li><li><a href="transcript-generator.html">Transcript Generator</a></li><li><a href="content-repurposing.html">Content Repurposing</a></li><li><a href="content-automation.html">Content Automation</a></li></ul></div>
+        <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 PodPress. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <script src="navbar.js"></script>
+  <script src="theme.js"></script>
+  <script src="premium.js"></script>
+  <script>
+    document.querySelectorAll('.sp-faq-q').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.sp-faq-item');
+        const open = item.classList.contains('is-open');
+        document.querySelectorAll('.sp-faq-item').forEach((i) => i.classList.remove('is-open'));
+        if (!open) item.classList.add('is-open');
+      });
+    });
+  </script>
+</body>
+</html>

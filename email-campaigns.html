@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send Podcast Newsletter Email Campaigns - Lists, Bulk Send, Analytics | PodPress</title>
+  <meta name="description" content="Run full email campaigns directly from PodPress. Import contacts, send in batches, and track delivery, opens, clicks, bounces, and unsubscribes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="pages.css" />
+  <style>
+    body.ec-page {
+      background:
+        radial-gradient(circle at top left, rgba(58,103,255,0.07), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(255,90,31,0.04), transparent 22%),
+        var(--bg);
+    }
+    .ec-hero { background: var(--surface); padding: 152px 0 108px; text-align: center; }
+    .ec-hero-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    .ec-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cornflower); border: 1.5px solid rgba(58,103,255,0.22); border-radius: 100px; padding: 7px 16px; margin-bottom: 24px; background: rgba(255,255,255,0.72); }
+    .ec-badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .ec-hero h1 { font-family: var(--font-display); font-size: clamp(2.6rem, 4.4vw, 3.6rem); font-weight: 400; line-height: 1.08; letter-spacing: -0.04em; color: var(--ink); margin-bottom: 16px; }
+    .ec-hero p { font-size: 0.97rem; color: var(--text-muted); line-height: 1.82; max-width: 640px; margin: 0 auto 32px; }
+
+    .ec-section { padding: 96px 0; }
+    .ec-section.alt { background: var(--surface); }
+    .ec-head { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+    .ec-head h2 { font-family: var(--font-display); font-size: clamp(1.9rem, 2.8vw, 2.5rem); font-weight: 400; letter-spacing: -0.03em; margin-bottom: 12px; color: var(--ink); }
+    .ec-head p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
+
+    .ec-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 980px; margin: 0 auto; }
+    .ec-card { background: rgba(255,255,255,0.82); border: 1px solid rgba(221,217,211,0.94); border-radius: 20px; padding: 22px; transition: border-color .2s ease, transform .2s ease; }
+    .ec-card:hover { border-color: rgba(58,103,255,0.25); transform: translateY(-2px); }
+    .ec-step { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cornflower); margin-bottom: 10px; }
+    .ec-card h3 { font-size: 1rem; margin-bottom: 8px; color: var(--ink); }
+    .ec-card p { font-size: 0.88rem; line-height: 1.65; color: var(--text-muted); }
+
+    .ec-kpi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: 980px; margin: 0 auto; }
+    .ec-kpi-item { background: rgba(255,255,255,0.82); border: 1px solid rgba(221,217,211,0.94); border-radius: 16px; padding: 18px; }
+    .ec-kpi-item h4 { font-size: 0.84rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cornflower); margin-bottom: 6px; }
+    .ec-kpi-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+    .sp-faq { padding: 96px 0 110px; }
+    .sp-faq-list { max-width: 860px; }
+
+    .cta-section {
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .cta-inner {
+      background: #F7F5F2;
+      border: 1px solid rgba(221,217,211,0.5);
+      border-radius: 20px;
+      padding: 80px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--slate);
+      margin-bottom: 16px;
+    }
+    .section-label::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--cornflower);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      color: var(--ink);
+    }
+    .section-title em { font-style: italic; color: var(--ampersand); }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+    .btn-large { padding: 16px 36px; font-size: 1rem; }
+
+    [data-theme="dark"] .cta-section { background: var(--bg); }
+    [data-theme="dark"] .cta-inner { background: var(--surface); border-color: var(--border); }
+
+    @media (max-width: 960px) { .ec-kpi { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .ec-grid, .ec-kpi { grid-template-columns: 1fr; } .ec-hero { padding: 132px 0 84px; } .cta-inner { padding: 56px 24px; } }
+  </style>
+</head>
+<body class="ec-page">
+  <section class="sp-hero ec-hero">
+    <div class="ec-hero-inner">
+      <span class="ec-badge">Email Campaigns</span>
+      <h1>Email campaigns built for podcasts.</h1>
+      <p>Import contacts, generate a branded newsletter from your episode, and send to your audience with full delivery and engagement analytics.</p>
+      <a href="https://app.podpress.so/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Send your first campaign &rarr;</a>
+    </div>
+  </section>
+
+  <section class="ec-section">
+    <div class="sp-container">
+      <div class="ec-head">
+        <h2>How the send workflow works</h2>
+      </div>
+      <div class="ec-grid">
+        <article class="ec-card"><div class="ec-step">Step 01</div><h3>Import or build contact lists</h3><p>Create lists in-app and import subscribers via CSV to keep ownership and segmentation in one place.</p></article>
+        <article class="ec-card"><div class="ec-step">Step 02</div><h3>Pick newsletter and design preset</h3><p>Choose a generated newsletter, apply your preferred email design, and preview final rendering.</p></article>
+        <article class="ec-card"><div class="ec-step">Step 03</div><h3>Prepare and deduplicate recipients</h3><p>Campaign prep removes duplicates across selected lists and validates send-ready contacts.</p></article>
+        <article class="ec-card"><div class="ec-step">Step 04</div><h3>Send in managed batches</h3><p>Bulk sends are processed in controlled batches for reliable delivery and tracking.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ec-section alt">
+    <div class="sp-container">
+      <div class="ec-head">
+        <h2>Analytics that matter</h2>
+        <p>Track campaign quality from delivery to engagement.</p>
+      </div>
+      <div class="ec-kpi">
+        <article class="ec-kpi-item"><h4>Delivery</h4><p>Delivered, deferred, bounce, and dropped visibility across each campaign send.</p></article>
+        <article class="ec-kpi-item"><h4>Engagement</h4><p>Unique opens, total opens, unique clicks, and click-through behavior.</p></article>
+        <article class="ec-kpi-item"><h4>List health</h4><p>Unsubscribe and spam report tracking for long-term sender reputation.</p></article>
+        <article class="ec-kpi-item"><h4>Send safeguards</h4><p>Content drift checks help avoid sending outdated newsletter drafts.</p></article>
+        <article class="ec-kpi-item"><h4>Scale limits</h4><p>Large audience support with structured batch sending and campaign protections.</p></article>
+        <article class="ec-kpi-item"><h4>Campaign history</h4><p>Review details, recipients, events, and campaign-level outcomes over time.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-faq" id="faq">
+    <div class="sp-container">
+      <div class="ec-head">
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="sp-faq-list">
+        <article class="sp-faq-item is-open">
+          <button class="sp-faq-q" type="button">Can I send bulk newsletters from PodPress?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. PodPress supports high-volume campaigns with managed send batches.</div></div>
+        </article>
+        <article class="sp-faq-item">
+          <button class="sp-faq-q" type="button">Can I import existing subscribers via CSV?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. Upload CSV files with supported contact fields and organize them into lists.</div></div>
+        </article>
+        <article class="sp-faq-item">
+          <button class="sp-faq-q" type="button">Do you track opens, clicks, and bounces?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. Campaign analytics include delivery, engagement, and list-health metrics.</div></div>
+        </article>
+        <article class="sp-faq-item">
+          <button class="sp-faq-q" type="button">What happens if newsletter content changes before send?<span class="icon">+</span></button>
+          <div class="sp-faq-a"><div class="sp-faq-a-inner">PodPress can detect content drift and prevent sending stale versions.</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="section-label" style="justify-content:center;">Ready?</div>
+        <h2 class="section-title">Turn one episode into a real campaign.<br><em>Send with confidence.</em></h2>
+        <p class="section-desc" style="text-align:center;max-width:460px;margin:0 auto 40px;">Branded, batched, and measured - all from a single PodPress workspace.</p>
+        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <a href="https://app.podpress.so/signup" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Get Started Free &rarr;</a>
+          <a href="#" class="btn btn-ghost btn-large">Watch Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo"><img src="logo-dark.png" alt="PodPress" /></a>
+          <p>AI-powered podcast automation. Turn episodes into newsletters, show notes, and social content in minutes.</p>
+        </div>
+        <div class="footer-col"><h4>Features</h4><ul><li><a href="transcript-to-newsletter.html">Transcript to Newsletter</a></li><li><a href="youtube-to-newsletter.html">YouTube to Newsletter</a></li><li><a href="rss-to-newsletter.html">RSS to Newsletter</a></li><li><a href="podcast-to-blog.html">Podcast to Blog</a></li><li><a href="podcast-to-faq.html">Podcast to FAQ</a></li><li><a href="podcast-to-insights.html">Podcast to Key Insights</a></li></ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul><li><a href="ai-newsletter-generator.html">AI Newsletter Generator</a></li><li><a href="newsletter-software.html">Newsletter Software</a></li><li><a href="transcript-generator.html">Transcript Generator</a></li><li><a href="content-repurposing.html">Content Repurposing</a></li><li><a href="content-automation.html">Content Automation</a></li></ul></div>
+        <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 PodPress. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <script src="navbar.js"></script>
+  <script src="theme.js"></script>
+  <script src="premium.js"></script>
+  <script>
+    document.querySelectorAll('.sp-faq-q').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.sp-faq-item');
+        const open = item.classList.contains('is-open');
+        document.querySelectorAll('.sp-faq-item').forEach((i) => i.classList.remove('is-open'));
+        if (!open) item.classList.add('is-open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -101,6 +101,97 @@ img { max-width: 100%; display: block; }
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--ink); }
+.nav-links li { position: relative; }
+.nav-item-features .nav-features-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-item-features .nav-features-toggle::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-right: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  opacity: 0.85;
+}
+.features-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-36%) translateY(10px);
+  width: min(980px, 92vw);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 22px 18px;
+  box-shadow: 0 24px 64px rgba(17, 17, 17, 0.1);
+  max-height: 72vh;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 3000;
+}
+.nav-item-features:hover .features-menu,
+.nav-item-features:focus-within .features-menu,
+.nav-item-features.is-open .features-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-36%) translateY(0);
+}
+.features-menu-title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.features-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 12px;
+}
+.features-menu-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  color: inherit;
+  text-decoration: none;
+}
+.features-menu-link:hover {
+  background: var(--bg);
+  border-color: var(--border);
+}
+.features-menu-link h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+.features-menu-link p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+@media (max-width: 1200px) {
+  .features-menu {
+    width: min(860px, 92vw);
+    transform: translateX(-42%) translateY(10px);
+  }
+  .nav-item-features:hover .features-menu,
+  .nav-item-features:focus-within .features-menu,
+  .nav-item-features.is-open .features-menu {
+    transform: translateX(-42%) translateY(0);
+  }
+  .features-menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 .nav-cta { display: flex; gap: 12px; align-items: center; }
 
 /* ─── Buttons ─── */
@@ -217,6 +308,7 @@ body.menu-open { overflow: hidden; position: fixed; width: 100%; }
   .nav-links { display: none; }
   .nav-cta   { display: none; }
   .mobile-toggle { display: flex; }
+  .features-menu { display: none; }
 }
 
 /* ─── Keep old .sp-nav classes for compatibility (hidden now) ─── */
